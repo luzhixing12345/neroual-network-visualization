@@ -2,6 +2,8 @@
 
 ## 介绍：
 
+### 组件介绍：
+
 - 界面：PYQT5+pytorch实现
 
 ![image-20211026224106512](https://raw.githubusercontent.com/learner-lu/picbed/master/image-20211026224106512.png)
@@ -20,8 +22,7 @@
 
 - dropout 
 
-![image-20211026230029695](https://raw.githubusercontent.com/learner-lu/picbed/master/image-20211026230029695.png)
-
+  ![image-20211026231747465](https://raw.githubusercontent.com/learner-lu/picbed/master/image-20211026231747465.png)
 - 全连接层
 
 ![image-20211026230135107](https://raw.githubusercontent.com/learner-lu/picbed/master/image-20211026230135107.png)
@@ -39,6 +40,8 @@
 ![image-20211026224608957](https://raw.githubusercontent.com/learner-lu/picbed/master/image-20211026224608957.png)
 
 
+
+### MNIST+EXAMPLE_NET1训练实例：
 
 EPOCH = 0 <img src="https://raw.githubusercontent.com/learner-lu/picbed/master/image-20211026224811860.png" alt=" " style="zoom:80%;" />
 
@@ -78,3 +81,4 @@ python graphical_interface.py
 
 - 第一次下载数据集时需要联网
 
+- popUpWindows.py没有用到，是一个很好的pyqt5做弹出窗口的代码示例
