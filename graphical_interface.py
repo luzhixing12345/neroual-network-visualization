@@ -108,7 +108,6 @@ class graphic_interface(QWidget):
 
         self.dataset_select(self.dataset)
 
-
     def add_conv(self):
         self.conv.handle_show()
 
@@ -136,8 +135,6 @@ class graphic_interface(QWidget):
         QMessageBox.about(self, "提示", '向量维度会在此改变')
         self.show_structure()
 
-        
-
     def delete(self):
         self.network = network(self.channel_,self.height_,self.width_)
         self.show_structure()
@@ -148,8 +145,7 @@ class graphic_interface(QWidget):
         self.thread_dataset = dataset(self.dataset)
         self.thread_dataset._signal.connect(self.call_back)
         self.thread_dataset.start()
-
-        
+      
     def call_back(self,msg):
         self.train_dataloader = msg[0]
         self.test_dataloader = msg[1]

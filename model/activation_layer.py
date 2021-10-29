@@ -13,16 +13,13 @@ class Mish(nn.Module):
         # inlining this saves 1 second per epoch (V100 GPU) vs having a temp x and then returning x(!)
         return x * (torch.tanh(F.softplus(x)))
 
-
 class Swish(nn.Module):
     def forward(self, x):
         return x * torch.sigmoid(x)
 
-
 class RELU(nn.Module):
     def forward(self,x):
         return F.relu(x)
-
 
 class GELU(nn.Module):
     """

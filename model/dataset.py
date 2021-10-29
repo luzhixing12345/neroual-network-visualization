@@ -5,6 +5,7 @@ from torchvision.transforms import ToTensor
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+
 Dataset = {'MNIST':datasets.MNIST,'Fashion_MNIST':datasets.FashionMNIST}
 
 MNIST_class = {

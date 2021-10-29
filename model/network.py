@@ -19,7 +19,6 @@ class network(nn.Module):
         x = self.sequential(x)
         return x
 
-
 class example_net_1(nn.Module):
     def __init__(self):
         super().__init__()

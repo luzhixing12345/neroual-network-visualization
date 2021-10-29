@@ -15,7 +15,6 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Using {} device".format(device))
 
 
-
 class Runthread(QThread):
     #  通过类成员对象定义信号对象
     _signal = pyqtSignal(list)
@@ -36,8 +35,6 @@ class Runthread(QThread):
             train(self.train_dataloader, self.model, loss_fn, optimizer)
             test(self.test_dataloader,self.model, loss_fn,self.graph)
         print("Done!")
-
-
 
 def train(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
@@ -75,19 +72,4 @@ def test(dataloader, model, loss_fn,graph):
     graph.update_pic()
     print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
 
-class Net(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.conv1 = nn.Conv2d(1, 15, kernel_size=4)
-        self.conv2 = nn.Conv2d(15, 20, kernel_size=5)
-        self.conv2_drop = nn.Dropout2d()
-        self.fc1 = nn.Linear(320, 50)
-        self.fc2 = nn.Linear(50, 10)
-    def forward(self, x):
-        x = F.relu(F.max_pool2d(self.conv1(x), 2))
-        x = F.relu(F.max_pool2d(self.conv2_drop(self.conv2(x)), 2))
-        x = x.view([-1, 320])
-        x = F.relu(self.fc1(x))
-        x = F.dropout(x, training=self.training)
-        x = self.fc2(x)
-        return x 
+

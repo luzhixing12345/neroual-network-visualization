@@ -2,7 +2,6 @@
 def show_layers(structure):
     n = len(structure)
     layers = ""
-
     for i in range(n):
         if i!=0:
             layers+='\n'
